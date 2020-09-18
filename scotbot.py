@@ -32,7 +32,6 @@ async def on_reaction_add(reaction, user):
         for react in reaction.message.reactions:
             if react.emoji == '🇾':
                 yreaction = react
-            print(react)
 
         yes_men = await yreaction.users().flatten()
         result = []
