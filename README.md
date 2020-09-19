@@ -4,6 +4,7 @@ Requested by Scotti to poll reactions
 Simmple and hardcoded for now I guess.
 
 ## Setup
+0. run `pip install -r requirements.txt`
 1. Create a `.env` file in the same folder as scotbot.py
 2. Add `SCOT_TOKEN=REPLACE_WITH_YOUR_TOKEN` and save
 3. Run scotbot.py when ready
