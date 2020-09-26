@@ -28,18 +28,20 @@ async def on_error(event, *args, **kwargs):
 @client.event
 async def on_reaction_add(reaction, user):
     channel = reaction.message.channel
+    dm_content = ''
+
     if reaction.emoji == '🏁':
         for react in reaction.message.reactions:
-            if react.emoji == '🇾':
-                yreaction = react
+            if react.emoji == '🏁':
+                continue
+            dm_content += str(react.emoji) + '\n'
+            users_with_this_react = await react.users().flatten()
 
-        yes_men = await yreaction.users().flatten()
-        result = []
+            for u in users_with_this_react:
+                dm_content += u.display_name + '\n'
 
-        for man in yes_men:
-            result.append(man.display_name)
-        if not user.dm_channel:
-            await user.create_dm()
-        await user.dm_channel.send(content=', '.join(result))
+            if not user.dm_channel:
+                await user.create_dm()
+            await user.dm_channel.send(content=dm_content)
 
 client.run(TOKEN)
