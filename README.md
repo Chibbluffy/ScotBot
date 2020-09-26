@@ -1,7 +1,7 @@
 # ScotBot
 Requested by Scotti to poll reactions
 
-Simmple and hardcoded for now I guess.
+Simmple and for now I guess.
 
 ## Setup
 0. run `pip install -r requirements.txt`
@@ -10,7 +10,8 @@ Simmple and hardcoded for now I guess.
 3. Run scotbot.py when ready
 
 How this works:
-1. React with 🏁 (:checkered_flag:) on a message to receive a DM from ScotBot with a list of users who have reacted to the same message with 🇾(:regional_indicator_y:)
+1. React with 🏁 (:checkered_flag:) on a message to receive a DM from ScotBot with a list of reactions and the users who reacted with that reaction.
+Note: This only works for messages that have been sent since the bot has been running. If the message and reactions were sent before the bot started up, it has no access to getting the reactions.
 
 That's it, you're done. :)
 
